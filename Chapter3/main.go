@@ -19,7 +19,10 @@ func main() {
 	// str = "cab"
 	// fmt.Println(deleteInsert(str))
 
-	str := "2276696"
-	fmt.Println(generateAllKeyCodes(str, 0))
-	fmt.Println(len(generateAllKeyCodes(str, 0)))
+	// str := "2276696"
+	// fmt.Println(generateAllKeyCodes(str, 0))
+	// fmt.Println(len(generateAllKeyCodes(str, 0)))
+
+	fmt.Println(lookAndSay(5))
+
 }
