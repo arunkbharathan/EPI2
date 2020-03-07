@@ -23,6 +23,10 @@ func main() {
 	// fmt.Println(generateAllKeyCodes(str, 0))
 	// fmt.Println(len(generateAllKeyCodes(str, 0)))
 
-	fmt.Println(lookAndSay(5))
+	// fmt.Println(lookAndSay(5))
+
+	// fmt.Println(nameReverse("Alice likes Bob"))
+	// fmt.Println(nameReverse("Ram is Costly"))
+	fmt.Println(isPalindrome("A man, a plan, a canal Panama."))
 
 }
