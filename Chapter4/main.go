@@ -31,37 +31,63 @@ func main() {
 	// mergeList()
 	// reverseSublist()
 	// findIfCyclic()
-	findOverlapp()
+	// findOverlapp()
+	// findKthFromLast()
+	evensFirstOddsLast()
 }
 
-func findOverlapp() {
-	arr1 := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
-	var ll1, ll2 ll
+func evensFirstOddsLast() {
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	ll1 := ll{}
 	t := &ll1
-	commonNode := &ll{}
-	for _, ele := range arr1 {
+	for _, ele := range arr {
 		t.next = &ll{ele, nil}
 		t = t.next
-		if ele == 6 {
-			commonNode = t
-		}
 	}
 	fmt.Println(&ll1)
-
-	arr2 := []int{11, 12, 13}
-	t = &ll2
-	lastNode := &ll{}
-	for _, ele := range arr2 {
-		t.next = &ll{ele, nil}
-		t = t.next
-	}
-	lastNode = t
-	fmt.Println(&ll2)
-	lastNode.next = commonNode
-	fmt.Println(&ll2)
-
-	fmt.Println(isOverlapping(&ll1, &ll2))
+	fmt.Println(evenOddMerge(&ll1))
 }
+
+// func findKthFromLast() {
+// 	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+// 	ll1 := ll{}
+// 	t := &ll1
+// 	for _, ele := range arr {
+// 		t.next = &ll{ele, nil}
+// 		t = t.next
+// 	}
+// 	fmt.Println(&ll1)
+// 	fmt.Println(deleteKthLastNode(&ll1, 5))
+// }
+
+// func findOverlapp() {
+// 	arr1 := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+// 	var ll1, ll2 ll
+// 	t := &ll1
+// 	commonNode := &ll{}
+// 	for _, ele := range arr1 {
+// 		t.next = &ll{ele, nil}
+// 		t = t.next
+// 		if ele == 6 {
+// 			commonNode = t
+// 		}
+// 	}
+// 	fmt.Println(&ll1)
+
+// 	arr2 := []int{11, 12, 13}
+// 	t = &ll2
+// 	lastNode := &ll{}
+// 	for _, ele := range arr2 {
+// 		t.next = &ll{ele, nil}
+// 		t = t.next
+// 	}
+// 	lastNode = t
+// 	fmt.Println(&ll2)
+// 	lastNode.next = commonNode
+// 	fmt.Println(&ll2)
+
+// 	fmt.Println(isOverlapping(&ll1, &ll2))
+// }
 
 // func findIfCyclic() {
 // 	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
