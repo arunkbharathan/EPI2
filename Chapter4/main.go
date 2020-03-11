@@ -37,7 +37,7 @@ func main() {
 }
 
 func evensFirstOddsLast() {
-	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
 	ll1 := ll{}
 	t := &ll1
 	for _, ele := range arr {
