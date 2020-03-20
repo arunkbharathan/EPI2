@@ -5,14 +5,20 @@ import "fmt"
 func main() {
 	// stackWithMax()
 	// solveReversePolishNotation()
-	checkWellFormedness()
-}
-
-func checkWellFormedness() {
-	str := "{,},[,],(,)"
-	fmt.Println(testWellFormedness(str))
+	// checkWellFormedness()
+	printBinaryTree()
 
 }
+
+func printBinaryTree() {
+	fmt.Println(bta)
+}
+
+// func checkWellFormedness() {
+// 	str := ")(({,},[,],(,),))"
+// 	fmt.Println(testWellFormedness(str))
+
+// }
 
 // func solveReversePolishNotation() {
 // 	notation1 := "3,4,+,2,*,1,+"
