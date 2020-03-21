@@ -6,13 +6,57 @@ func main() {
 	// stackWithMax()
 	// solveReversePolishNotation()
 	// checkWellFormedness()
-	printBinaryTree()
+	// printBinaryTree()
+	circularQImplementation()
 
 }
 
-func printBinaryTree() {
-	fmt.Println(bta)
+func circularQImplementation() {
+	cr := getNewQ(2)
+	cr.Push("1")
+	cr.Push("2")
+	cr.Push("3")
+	cr.Push("4")
+	fmt.Println(cr.String())
+	fmt.Println(cr.Pop())
+	fmt.Println(cr.Pop())
+	cr.Push("a")
+	cr.Push("b")
+	cr.Push("c")
+	cr.Push("d")
+	fmt.Println(cr.String())
+	cr.Pop()
+	cr.Pop()
+	cr.Pop()
+	cr.Pop()
+	cr.Pop()
+	cr.Pop()
+	fmt.Println(cr.String())
+	cr.Push("a")
+	cr.Push("b")
+	cr.Push("c")
+	cr.Push("d")
+	cr.Push("1")
+	cr.Push("2")
+	cr.Push("3")
+	cr.Push("4")
+	cr.Push("h")
+	cr.Push("g")
+	cr.Push("f")
+	cr.Push("e")
+	fmt.Println(cr.String())
+	cr.Push("AKB")
+	cr.Pop()
+	cr.Pop()
+	cr.Pop()
+	cr.Push("cds")
+	fmt.Println(cr.String())
+	fmt.Println(cr.Cap())
 }
+
+// func printBinaryTree() {
+// 	fmt.Println(bta)
+// }
 
 // func checkWellFormedness() {
 // 	str := ")(({,},[,],(,),))"
