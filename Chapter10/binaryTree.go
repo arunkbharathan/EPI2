@@ -101,3 +101,68 @@ func btBalanced() *binaryTree {
 	btp.parent = bto
 	return bta
 }
+
+func btSymmetric1() *binaryTree {
+	bta := &binaryTree{314, nil, nil, nil}
+
+	btb := &binaryTree{6, nil, nil, nil}
+	bte := &binaryTree{6, nil, nil, nil}
+
+	btc := &binaryTree{2, nil, nil, nil}
+	btf := &binaryTree{2, nil, nil, nil}
+
+	btd := &binaryTree{3, nil, nil, nil}
+	btg := &binaryTree{3, nil, nil, nil}
+
+	bta.left = btb
+	btb.right = btc
+	btc.right = btd
+
+	bta.right = bte
+	bte.left = btf
+	btf.left = btg
+	return bta
+}
+
+func btAsymmetric1() *binaryTree {
+	bta := &binaryTree{314, nil, nil, nil}
+
+	btb := &binaryTree{6, nil, nil, nil}
+	bte := &binaryTree{6, nil, nil, nil}
+
+	btc := &binaryTree{561, nil, nil, nil}
+	btf := &binaryTree{2, nil, nil, nil}
+
+	btd := &binaryTree{3, nil, nil, nil}
+	btg := &binaryTree{1, nil, nil, nil}
+
+	bta.left = btb
+	btb.right = btc
+	btc.right = btd
+
+	bta.right = bte
+	bte.left = btf
+	btf.left = btg
+	return bta
+}
+
+func btAsymmetric2() *binaryTree {
+	bta := &binaryTree{314, nil, nil, nil}
+
+	btb := &binaryTree{6, nil, nil, nil}
+	bte := &binaryTree{6, nil, nil, nil}
+
+	btc := &binaryTree{561, nil, nil, nil}
+	btf := &binaryTree{561, nil, nil, nil}
+
+	btd := &binaryTree{3, nil, nil, nil}
+
+	bta.left = btb
+	btb.right = btc
+	btc.right = btd
+
+	bta.right = bte
+	bte.left = btf
+	btf.left = btg
+	return bta
+}

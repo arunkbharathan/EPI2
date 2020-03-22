@@ -1,17 +1,20 @@
 package main
 
-import "fmt"
-
 func main() {
-	checkIfHeightBalanced()
+	// checkIfHeightBalanced()
+	checkIfBTisSymmetric()
 }
 
-func checkIfHeightBalanced() {
-	bta := btBalanced()
-	fmt.Println(bta)
-	fmt.Println(isHeightBalanced(bta))
-	fmt.Println()
-	bta = btUnbalanced()
-	fmt.Println(bta)
-	fmt.Println(isHeightBalanced(bta))
+func checkIfBTisSymmetric() {
+
 }
+
+// func checkIfHeightBalanced() {
+// 	bta := btBalanced()
+// 	fmt.Println(bta)
+// 	fmt.Println(isHeightBalanced(bta))
+// 	fmt.Println()
+// 	bta = btUnbalanced()
+// 	fmt.Println(bta)
+// 	fmt.Println(isHeightBalanced(bta))
+// }
