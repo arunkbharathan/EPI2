@@ -3,15 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	// checkIfHeightBalanced()
-	// checkIfBTisSymmetric()
-	findLowestCommonAncestor()
+	// 	checkIfHeightBalanced()
+	// 	checkIfBTisSymmetric()
+	// 	findLowestCommonAncestor()
+	inOrderTraversalUsingLoop()
 }
 
-func findLowestCommonAncestor() {
-	bt1, bt2 := btGetTwoNodes()
-	fmt.Println(findLCA(bt1, bt2).data)
+func inOrderTraversalUsingLoop() {
+	bt := btSymmetric1()
+	fmt.Println(bt)
+	inOrderLoopTraversal(bt)
 }
+
+// // func findLowestCommonAncestor() {
+// // 	bt1, bt2 := btGetTwoNodes()
+// // 	fmt.Println(findLCA(bt1, bt2).data)
+// // }
 
 // func checkIfBTisSymmetric() {
 // 	bt := btSymmetric1()
