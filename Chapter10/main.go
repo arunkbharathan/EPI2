@@ -4,30 +4,36 @@ import "fmt"
 
 func main() {
 	// checkIfHeightBalanced()
-	checkIfBTisSymmetric()
+	// checkIfBTisSymmetric()
+	findLowestCommonAncestor()
 }
 
-func checkIfBTisSymmetric() {
-	bt := btSymmetric1()
-	fmt.Println(bt)
-	fmt.Println("Symmetric:", isBtSymmetric(bt))
-
-	bt = btAsymmetric1()
-	fmt.Println(bt)
-	fmt.Println(isBtSymmetric(bt))
-
-	bt = btAsymmetric2()
-	fmt.Println(bt)
-	fmt.Println(isBtSymmetric(bt))
-
-	bt = btUnbalanced()
-	fmt.Println(bt)
-	fmt.Println(isBtSymmetric(bt))
-
-	bt = btBalanced()
-	fmt.Println(bt)
-	fmt.Println(isBtSymmetric(bt))
+func findLowestCommonAncestor() {
+	bt1, bt2 := btGetTwoNodes()
+	fmt.Println(findLCA(bt1, bt2).data)
 }
+
+// func checkIfBTisSymmetric() {
+// 	bt := btSymmetric1()
+// 	fmt.Println(bt)
+// 	fmt.Println("Symmetric:", isBtSymmetric(bt))
+
+// 	bt = btAsymmetric1()
+// 	fmt.Println(bt)
+// 	fmt.Println(isBtSymmetric(bt))
+
+// 	bt = btAsymmetric2()
+// 	fmt.Println(bt)
+// 	fmt.Println(isBtSymmetric(bt))
+
+// 	bt = btUnbalanced()
+// 	fmt.Println(bt)
+// 	fmt.Println(isBtSymmetric(bt))
+
+// 	bt = btBalanced()
+// 	fmt.Println(bt)
+// 	fmt.Println(isBtSymmetric(bt))
+// }
 
 // func checkIfHeightBalanced() {
 // 	bta := btBalanced()
