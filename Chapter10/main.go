@@ -10,7 +10,7 @@ func main() {
 }
 
 func inOrderTraversalUsingLoop() {
-	bt := btSymmetric1()
+	bt := btUnbalanced()
 	fmt.Println(bt)
 	inOrderLoopTraversal(bt)
 }

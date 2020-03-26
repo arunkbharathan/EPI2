@@ -10,27 +10,27 @@ type binaryTree struct {
 
 func btUnbalanced() *binaryTree {
 	var (
-		bta *binaryTree = &binaryTree{314, "", nil, nil, nil}
+		bta *binaryTree = &binaryTree{314, "A", nil, nil, nil}
 
-		btb *binaryTree = &binaryTree{6, "", nil, nil, nil}
-		bti *binaryTree = &binaryTree{6, "", nil, nil, nil}
+		btb *binaryTree = &binaryTree{6, "B", nil, nil, nil}
+		bti *binaryTree = &binaryTree{6, "I", nil, nil, nil}
 
-		btc *binaryTree = &binaryTree{271, "", nil, nil, nil}
-		btf *binaryTree = &binaryTree{561, "", nil, nil, nil}
-		btj *binaryTree = &binaryTree{2, "", nil, nil, nil}
-		bto *binaryTree = &binaryTree{271, "", nil, nil, nil}
+		btc *binaryTree = &binaryTree{271, "C", nil, nil, nil}
+		btf *binaryTree = &binaryTree{561, "F", nil, nil, nil}
+		btj *binaryTree = &binaryTree{2, "J", nil, nil, nil}
+		bto *binaryTree = &binaryTree{271, "O", nil, nil, nil}
 
-		btd *binaryTree = &binaryTree{28, "", nil, nil, nil}
-		bte *binaryTree = &binaryTree{0, "", nil, nil, nil}
-		btg *binaryTree = &binaryTree{3, "", nil, nil, nil}
-		btk *binaryTree = &binaryTree{1, "", nil, nil, nil}
-		btp *binaryTree = &binaryTree{28, "", nil, nil, nil}
+		btd *binaryTree = &binaryTree{28, "D", nil, nil, nil}
+		bte *binaryTree = &binaryTree{0, "E", nil, nil, nil}
+		btg *binaryTree = &binaryTree{3, "G", nil, nil, nil}
+		btk *binaryTree = &binaryTree{1, "K", nil, nil, nil}
+		btp *binaryTree = &binaryTree{28, "P", nil, nil, nil}
 
-		bth *binaryTree = &binaryTree{17, "", nil, nil, nil}
-		btl *binaryTree = &binaryTree{401, "", nil, nil, nil}
-		btn *binaryTree = &binaryTree{257, "", nil, nil, nil}
+		bth *binaryTree = &binaryTree{17, "H", nil, nil, nil}
+		btl *binaryTree = &binaryTree{401, "L", nil, nil, nil}
+		btn *binaryTree = &binaryTree{257, "N", nil, nil, nil}
 
-		btm *binaryTree = &binaryTree{641, "", nil, nil, nil}
+		btm *binaryTree = &binaryTree{641, "M", nil, nil, nil}
 	)
 
 	bta.parent = nil
