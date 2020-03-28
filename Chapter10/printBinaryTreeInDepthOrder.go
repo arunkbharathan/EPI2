@@ -24,7 +24,8 @@ func printFromQ(li *list.List, str *strings.Builder) string {
 		bn := val.Value.(*binaryTree)
 		li.Remove(val)
 		if bn != nil {
-			str.WriteString(fmt.Sprintf("%d ", bn.data))
+			// str.WriteString(fmt.Sprintf("%d ", bn.data))
+			str.WriteString(fmt.Sprintf("%s ", bn.str))
 			li.PushBack(bn.left)
 			li.PushBack(bn.right)
 		}

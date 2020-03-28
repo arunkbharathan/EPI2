@@ -6,14 +6,26 @@ func main() {
 	// 	checkIfHeightBalanced()
 	// 	checkIfBTisSymmetric()
 	// 	findLowestCommonAncestor()
-	inOrderTraversalUsingLoop()
+	// inOrderTraversalUsingLoop()
+	reconstructBinaryTreeFromTraversalData()
 }
 
-func inOrderTraversalUsingLoop() {
-	bt := btUnbalanced()
-	fmt.Println(bt)
-	inOrderLoopTraversal(bt)
+func reconstructBinaryTreeFromTraversalData() {
+	inorder := "FBAEHCDIG"
+	preorder := "HBFEACDGI"
+	reconBTree := reconstructBinaryTree(inorder, preorder)
+	fmt.Println(reconBTree)
+	inorder = "DCEBFHGAJLMKNIOP"
+	preorder = "ABCDEFGHIJKLMNOP"
+	reconBTree = reconstructBinaryTree(inorder, preorder)
+	fmt.Println(reconBTree)
 }
+
+// func inOrderTraversalUsingLoop() {
+// 	bt := btUnbalanced()
+// 	fmt.Println(bt)
+// 	inOrderLoopTraversal(bt)
+// }
 
 // // func findLowestCommonAncestor() {
 // // 	bt1, bt2 := btGetTwoNodes()
