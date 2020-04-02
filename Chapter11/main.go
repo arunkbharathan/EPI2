@@ -7,14 +7,19 @@ import "fmt"
 func main() {
 	// samplePushPopHeap()
 	// sortSortedArrays()
-	sortAlmostSortedArray()
+	// sortAlmostSortedArray()
+	findKclosestStars()
 }
 
-func sortAlmostSortedArray() {
-	array := []int{3, -1, 2, 6, 4, 5, 8, 6, 7, 12, 9, 10, 14, 12, 13, 20, 15}
-	fmt.Println(array)
-	fmt.Println(sortArray(array, 4))
+func findKclosestStars() {
+	fmt.Println(findNclosestStars(5))
 }
+
+// func sortAlmostSortedArray() {
+// 	array := []int{3, -1, 2, 6, 4, 5, 8, 6, 7, 12, 9, 10, 14, 12, 13, 20, 15}
+// 	fmt.Println(array)
+// 	fmt.Println(sortArray(array, 4))
+// }
 
 // func sortSortedArrays() {
 // 	arrays := [][]int{

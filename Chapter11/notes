@@ -1,0 +1,4 @@
+for i in {0..100}                                                                              (singapore/ward-bnlmnviao8e1uj1blkg0)
+do
+echo "$RANDOM" >> stardataset
+done
