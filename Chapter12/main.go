@@ -9,7 +9,7 @@ func main() {
 }
 
 func smallestInCyclicallySortedArray() {
-	arr := []int{378, 478, 550, 631, 103, 203, 220, 234, 279}
+	arr := []int{378, 478, 550, 631, 635, 103, 203, 220, 234, 279}
 	index := smallestInCyclicallySorted(arr)
 	fmt.Printf("Smallest element in array %v is at index %d\n", arr, index)
 }
