@@ -15,14 +15,15 @@ func streamingMedian() {
 	heap.Init(maxH)
 	heap.Init(minH)
 
-	fs, err := os.Open("./numbers")
+	// fs, err := os.Open("./numbers")
+	// fs, err := os.Open("./sortedNumbers")
+	fs, err := os.Open(os.Stdin.Name())
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer fs.Close()
 	fileScanner := bufio.NewScanner(fs)
 	cnt := 0
-	preMedian := 0.0
 	median := 0.0
 	for fileScanner.Scan() {
 		cnt++
@@ -32,85 +33,42 @@ func streamingMedian() {
 			log.Println(err)
 			continue
 		}
-
-		if cnt == 1 {
-			median = floatVal
-			fmt.Println(median)
-			preMedian = median
-		} else if cnt == 2 {
-			median = (preMedian + floatVal) / 2
-			fmt.Println(median)
-			if floatVal < median {
-				heap.Push(maxH, floatVal)
-				heap.Push(minH, preMedian)
-			} else {
-				heap.Push(minH, floatVal)
-				heap.Push(maxH, preMedian)
-			}
-			preMedian = median
+		// Push first to minheap
+		if minH.Len() == 0 {
+			heap.Push(minH, floatVal)
 		} else {
-			//odd cnt means a number in array is middle element
-			// else the avg of mid 2 elements split sorted array to 2 equal half
-			if cnt%2 == 0 {
-				if floatVal > preMedian {
-
-					heap.Push(minH, floatVal)
-
-					rVal := heap.Pop(minH).(float64)
-					median = (rVal + preMedian) / 2
-					if rVal < median {
-						heap.Push(maxH, rVal)
-					} else {
-						heap.Push(minH, rVal)
-					}
-					if preMedian < median {
-						heap.Push(maxH, preMedian)
-					} else {
-						heap.Push(minH, preMedian)
-					}
-
-				}
-				if floatVal < preMedian {
-					heap.Push(maxH, floatVal)
-					lVal := heap.Pop(maxH).(float64)
-					median = (lVal + preMedian) / 2
-					if lVal < median {
-						heap.Push(maxH, lVal)
-					} else {
-						heap.Push(minH, lVal)
-					}
-
-				}
-				if floatVal == median {
-					heap.Push(minH, floatVal)
-				}
-				fmt.Println(median)
-				preMedian = median
+			// Push based on top of minHeap(maxHeap is also fine)
+			minHVal := heap.Pop(minH).(float64)
+			if floatVal >= minHVal {
+				heap.Push(minH, floatVal)
 			} else {
-				if floatVal > preMedian {
-
-					heap.Push(minH, floatVal)
-
-					rVal := heap.Pop(minH).(float64)
-					median = rVal
-
-				}
-				if floatVal < median {
-					heap.Push(maxH, floatVal)
-
-					lVal := heap.Pop(maxH).(float64)
-					median = lVal
-
-				}
-				if floatVal == median {
-					heap.Push(minH, floatVal)
-				}
-				fmt.Println(median)
-				preMedian = median
+				heap.Push(maxH, floatVal)
 			}
+			heap.Push(minH, minHVal)
+		}
+		// Ensure min_heap and max_heap have equal number of elements if
+		// an even number of elements is read; otherwise, min_heap must have
+		// one more element than max_heap.
 
+		if minH.Len() > maxH.Len()+1 {
+			heap.Push(maxH, (heap.Pop(minH)))
+		} else if maxH.Len() > minH.Len() {
+			heap.Push(minH, heap.Pop(maxH))
+		}
+
+		//Calculate median
+		if maxH.Len() == minH.Len() {
+			rVal := heap.Pop(minH).(float64)
+			lVal := heap.Pop(maxH).(float64)
+			fmt.Println((rVal + lVal) / 2)
+			heap.Push(minH, rVal)
+			heap.Push(maxH, lVal)
+		} else {
+			median = heap.Pop(minH).(float64)
+			fmt.Println(median)
+			heap.Push(minH, median)
 		}
 	}
-	fmt.Println(maxH.Len())
-	fmt.Println(maxH.Len())
+	// fmt.Println(minH.Len())
+	// fmt.Println(maxH.Len())
 }

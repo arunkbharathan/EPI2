@@ -2,3 +2,11 @@ for i in {0..100}                                                               
 do
 echo "$RANDOM" >> stardataset
 done
+
+for((i=1;i<=10;i+=2)); do echo "$i"; done
+
+go build -o median main.go floatMaxHeap.go floatHeap.go findRunningMedian.go  
+
+cat sortedNumbers | pv -L 32  | ./median   
+
+pv -L 32 < sortedNumbers  | ./median  
