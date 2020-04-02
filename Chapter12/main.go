@@ -5,14 +5,21 @@ import "fmt"
 func main() {
 	// searchExample()
 	// searchSortedArrayForFirstOccurrencsOfK()
-	smallestInCyclicallySortedArray()
+	// smallestInCyclicallySortedArray()
+	findIntegerSquareRoot()
 }
 
-func smallestInCyclicallySortedArray() {
-	arr := []int{378, 478, 550, 631, 635, 103, 203, 220, 234, 279}
-	index := smallestInCyclicallySorted(arr)
-	fmt.Printf("Smallest element in array %v is at index %d\n", arr, index)
+func findIntegerSquareRoot() {
+	num := 1000
+	sr := integerSquareRootOf(num)
+	fmt.Println(sr, " : ", sr*sr, " : ", num)
 }
+
+// func smallestInCyclicallySortedArray() {
+// 	arr := []int{378, 478, 550, 631, 635, 103, 203, 220, 234, 279}
+// 	index := smallestInCyclicallySorted(arr)
+// 	fmt.Printf("Smallest element in array %v is at index %d\n", arr, index)
+// }
 
 // func searchSortedArrayForFirstOccurrencsOfK() {
 // 	arr := []int{-14, -10, 2, 108, 108, 243, 285, 285, 285, 401}
