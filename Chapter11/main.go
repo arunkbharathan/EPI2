@@ -1,19 +1,22 @@
 package main
 
-import "fmt"
-
 // This example inserts several ints into an IntHeap, checks the minimum,
 // and removes them in order of priority.
 func main() {
 	// samplePushPopHeap()
 	// sortSortedArrays()
 	// sortAlmostSortedArray()
-	findKclosestStars()
+	// findKclosestStars()
+	findRunningMedian()
 }
 
-func findKclosestStars() {
-	fmt.Println(findNclosestStars(5))
+func findRunningMedian() {
+	streamingMedian()
 }
+
+// func findKclosestStars() {
+// 	fmt.Println(findNclosestStars(5))
+// }
 
 // func sortAlmostSortedArray() {
 // 	array := []int{3, -1, 2, 6, 4, 5, 8, 6, 7, 12, 9, 10, 14, 12, 13, 20, 15}
