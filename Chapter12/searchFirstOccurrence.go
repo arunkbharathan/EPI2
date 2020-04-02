@@ -8,9 +8,7 @@ func searchForFirstK(arr []int, key int) int {
 	for L <= U {
 		M = L + (U-L)/2
 		if key == arr[M] {
-			if M < minM {
-				minM = M
-			}
+			minM = M
 			L = 0
 			U = M - 1
 		}
