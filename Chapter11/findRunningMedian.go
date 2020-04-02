@@ -111,4 +111,6 @@ func streamingMedian() {
 
 		}
 	}
+	fmt.Println(maxH.Len())
+	fmt.Println(maxH.Len())
 }
