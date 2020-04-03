@@ -6,14 +6,25 @@ func main() {
 	// searchExample()
 	// searchSortedArrayForFirstOccurrencsOfK()
 	// smallestInCyclicallySortedArray()
-	findIntegerSquareRoot()
+	// findIntegerSquareRoot()
+	findSquareRoot()
 }
 
-func findIntegerSquareRoot() {
-	num := 1000
-	sr := integerSquareRootOf(num)
-	fmt.Println(sr, " : ", sr*sr, " : ", num)
+func findSquareRoot() {
+	var num float64 = 0.089
+	sr, itr := squareRootOf(num, 0.001)
+	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
+	num = 924783849738
+	sr, itr = squareRootOf(num, 0.001)
+	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
+
 }
+
+// func findIntegerSquareRoot() {
+// 	num := 1000
+// 	sr := integerSquareRootOf(num)
+// 	fmt.Printf("Integer square root of %d is %d and its square is %d.\n", num, sr, sr*sr)
+// }
 
 // func smallestInCyclicallySortedArray() {
 // 	arr := []int{378, 478, 550, 631, 635, 103, 203, 220, 234, 279}
