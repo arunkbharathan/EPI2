@@ -23,10 +23,8 @@ func streamingMedian() {
 	}
 	defer fs.Close()
 	fileScanner := bufio.NewScanner(fs)
-	cnt := 0
 	median := 0.0
 	for fileScanner.Scan() {
-		cnt++
 		intVal, err := strconv.Atoi(fileScanner.Text())
 		floatVal := float64(intVal)
 		if err != nil {

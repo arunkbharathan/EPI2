@@ -8,16 +8,27 @@ func main() {
 	// smallestInCyclicallySortedArray()
 	// findIntegerSquareRoot()
 	// findSquareRoot()
-	findKthLargestElementInArray()
+	// findKthLargestElementInArray()
+	findMissingAndDuplicateInArray()
 }
 
-func findKthLargestElementInArray() {
-	arr := []int{3, 2, 1, 5, 4, 6, 9, 8, 7, 10, 654, 43, 576, 34, 5757, 534}
-	k := 10
-	res := kTHLargestElement(arr, k)
-	fmt.Println(arr, k)
-	fmt.Println(res)
+func findMissingAndDuplicateInArray() {
+	arr := []int{5, 3, 0, 3, 1, 2}
+	m, d := findMissingAndDuplicate(arr)
+	fmt.Println(m, d)
 }
+
+// func findMissinfIPAddress() {
+// 	findMissingIP()
+// }
+
+// func findKthLargestElementInArray() {
+// 	arr := []int{3, 2, 1, 5, 4, 6, 9, 8, 7, 10, 654, 43, 576, 34, 5757, 534}
+// 	k := 10
+// 	res := kTHLargestElement(arr, k)
+// 	fmt.Println(arr, k)
+// 	fmt.Println(res)
+// }
 
 // func findSquareRoot() {
 // 	var num float64 = 0.089
