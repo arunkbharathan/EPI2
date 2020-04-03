@@ -9,7 +9,7 @@ func kTHLargestElement(arr []int, k int) int {
 	L := 0
 	R := len(arr) - 1
 	kthLargestProperIndex := len(arr) - k
-	for {
+	for L <= R {
 		pivotIndex := randIntBetweenAndIncluding(L, R)
 		pivotNewIndex := partitionArray(arr, pivotIndex)
 		if kthLargestProperIndex == pivotNewIndex {
