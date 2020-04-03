@@ -7,18 +7,26 @@ func main() {
 	// searchSortedArrayForFirstOccurrencsOfK()
 	// smallestInCyclicallySortedArray()
 	// findIntegerSquareRoot()
-	findSquareRoot()
+	// findSquareRoot()
+	findKthLargestElementInArray()
 }
 
-func findSquareRoot() {
-	var num float64 = 0.089
-	sr, itr := squareRootOf(num, 0.001)
-	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
-	num = 924783849738
-	sr, itr = squareRootOf(num, 0.001)
-	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
-
+func findKthLargestElementInArray() {
+	arr := []int{3, 2, 1, 5, 4, 6, 9, 8, 7, 10, 654, 43, 576, 34, 5757, 534}
+	k := 10
+	res := kTHLargestElement(arr, k)
+	fmt.Println(arr, k)
+	fmt.Println(res)
 }
+
+// func findSquareRoot() {
+// 	var num float64 = 0.089
+// 	sr, itr := squareRootOf(num, 0.001)
+// 	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
+// 	num = 924783849738
+// 	sr, itr = squareRootOf(num, 0.001)
+// 	fmt.Printf("The square root of %.2f is %.2f and its square is %.2f \nand number of iterations it took is %d.\n", num, sr, sr*sr, itr)
+// }
 
 // func findIntegerSquareRoot() {
 // 	num := 1000
