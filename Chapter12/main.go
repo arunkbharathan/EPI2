@@ -13,9 +13,13 @@ func main() {
 }
 
 func findMissingAndDuplicateInArray() {
-	arr := []int{5, 3, 0, 3, 1, 2}
+	arr := []uint{5, 3, 0, 3, 1, 2}
 	m, d := findMissingAndDuplicate(arr)
-	fmt.Println(m, d)
+	fmt.Printf("%v\nMissing: %d, Duplicated: %d\n", arr, m, d)
+
+	arr = []uint{15, 12, 0, 13, 11, 14, 10, 5, 3, 9, 4, 1, 2, 6, 8, 13}
+	m, d = findMissingAndDuplicate(arr)
+	fmt.Printf("%v\nMissing: %d, Duplicated: %d\n", arr, m, d)
 }
 
 // func findMissinfIPAddress() {
