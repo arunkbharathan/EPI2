@@ -26,10 +26,6 @@ func findMissingIP() {
 
 	for fileScanner.Scan() {
 		line := fileScanner.Text()
-		if err != nil {
-			log.Println(err)
-			continue
-		}
 		ipWords := strings.Split(line, ".")
 		if len(ipWords) == 4 {
 			a, err := strconv.Atoi(ipWords[0])
