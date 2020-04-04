@@ -7,7 +7,7 @@ func main() {
 }
 
 func isbnCacheImplementation() {
-
+	isbnBookCache()
 }
 
 // func isAnonymousLetterConstrutible() {
