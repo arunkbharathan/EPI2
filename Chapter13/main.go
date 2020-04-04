@@ -1,15 +1,18 @@
 package main
 
-import "fmt"
-
 func main() {
 	// testPalindromicPermutation()
-	isAnonymousLetterConstrutible()
+	// isAnonymousLetterConstrutible()
+	isbnCacheImplementation()
 }
 
-func isAnonymousLetterConstrutible() {
-	fmt.Println(testForAnonymousLetterConstrutible("./magazine", "./letter"))
+func isbnCacheImplementation() {
+
 }
+
+// func isAnonymousLetterConstrutible() {
+// 	fmt.Println(testForAnonymousLetterConstrutible("./magazine", "./letter"))
+// }
 
 // func testPalindromicPermutation() {
 // 	arr := []string{"level", "rotator", "foobaraboof", "edified", "corona", "virus", "ipopoi"}
