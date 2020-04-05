@@ -6,13 +6,20 @@ func main() {
 	// testPalindromicPermutation()
 	// isAnonymousLetterConstrutible()
 	// isbnCacheImplementation()
-	lcaOptimized()
+	// lcaOptimized()
+	findKMostFrequentQueries()
 }
 
-func lcaOptimized() {
-	bt1, bt2 := btGetTwoNodes()
-	fmt.Println(findLCAOptimized(bt1, bt2).data)
+func findKMostFrequentQueries() {
+	for _, val := range findFrequentQueries(10) {
+		fmt.Println(*val)
+	}
 }
+
+// func lcaOptimized() {
+// 	bt1, bt2 := btGetTwoNodes()
+// 	fmt.Println(findLCAOptimized(bt1, bt2).data)
+// }
 
 // func isbnCacheImplementation() {
 // 	isbnBookCache()

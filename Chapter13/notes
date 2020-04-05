@@ -1,0 +1,4 @@
+history > queriesFile
+
+^\s*[\d]+[\s|*]+
+
