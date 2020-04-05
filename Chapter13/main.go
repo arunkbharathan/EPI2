@@ -1,14 +1,22 @@
 package main
 
+import "fmt"
+
 func main() {
 	// testPalindromicPermutation()
 	// isAnonymousLetterConstrutible()
-	isbnCacheImplementation()
+	// isbnCacheImplementation()
+	lcaOptimized()
 }
 
-func isbnCacheImplementation() {
-	isbnBookCache()
+func lcaOptimized() {
+	bt1, bt2 := btGetTwoNodes()
+	fmt.Println(findLCAOptimized(bt1, bt2).data)
 }
+
+// func isbnCacheImplementation() {
+// 	isbnBookCache()
+// }
 
 // func isAnonymousLetterConstrutible() {
 // 	fmt.Println(testForAnonymousLetterConstrutible("./magazine", "./letter"))
