@@ -9,25 +9,35 @@ func main() {
 	// lcaOptimized()
 	// findKMostFrequentQueries()
 	// findNearestRepeatedEntriesInArray()
-	findSmallestSubarrayCoveringAllValues()
+	// findSmallestSubarrayCoveringAllValues()
+	findLongestSubarrayWithDistinctEntries()
 }
 
-func findSmallestSubarrayCoveringAllValues() {
-	excerpt1 := "My paramount object in this struggle is to save the Union , and is not either to save or to destroy slavery. If I could save the Union without freeing any slave, I would do it; and if I could save it by freeing some and leaving others alone, I would also do that."
-	keywords1 := []string{"save", "union"}
-	excerpt2 := "apple banana banana apple dog cat apple dog apple dog banana cat"
-	keywords2 := []string{"banana", "cat"}
-	fmt.Println("Method-1")
-	arr := findSmallestSubarray1(excerpt1, keywords1)
-	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
-	arr = findSmallestSubarray1(excerpt2, keywords2)
-	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
-	fmt.Println("Method-2")
-	arr = findSmallestSubarray2(excerpt1, keywords1)
-	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
-	arr = findSmallestSubarray2(excerpt2, keywords2)
-	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
+func findLongestSubarrayWithDistinctEntries() {
+	arr := "a b b a d c a d a d b c k"
+	result := longestSubarrayWithDistinctEntries(arr)
+	fmt.Printf("string: %s\nLongest distinct sequence length: %d\n", arr, result)
+	arr = "f s f e t w k e n w e"
+	result = longestSubarrayWithDistinctEntries(arr)
+	fmt.Printf("string: %s\nLongest distinct sequence length: %d\n", arr, result)
 }
+
+// func findSmallestSubarrayCoveringAllValues() {
+// 	excerpt1 := "My paramount object in this struggle is to save the Union , and is not either to save or to destroy slavery. If I could save the Union without freeing any slave, I would do it; and if I could save it by freeing some and leaving others alone, I would also do that."
+// 	keywords1 := []string{"save", "union"}
+// 	excerpt2 := "apple banana banana apple dog cat apple dog apple dog banana cat"
+// 	keywords2 := []string{"banana", "cat"}
+// 	fmt.Println("Method-1")
+// 	arr := findSmallestSubarray1(excerpt1, keywords1)
+// 	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
+// 	arr = findSmallestSubarray1(excerpt2, keywords2)
+// 	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
+// 	fmt.Println("Method-2")
+// 	arr = findSmallestSubarray2(excerpt1, keywords1)
+// 	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
+// 	arr = findSmallestSubarray2(excerpt2, keywords2)
+// 	fmt.Printf("start: %d end:%d\n", arr[0], arr[1])
+// }
 
 // func findNearestRepeatedEntriesInArray() {
 // 	arr := []string{"All", "work", "and", "no", "play", "makes", "for",
