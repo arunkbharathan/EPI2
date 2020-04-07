@@ -1,50 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"math"
-	"os"
-	"sync"
-	"text/tabwriter"
-	"time"
-)
+import "fmt"
 
 func main() {
-	producer := func(wg *sync.WaitGroup, l sync.Locker) {
-		defer wg.Done()
-		for i := 5; i > 0; i-- {
-			l.Lock()
-			l.Unlock()
-			time.Sleep(1)
-		}
-	}
-	observer := func(wg *sync.WaitGroup, l sync.Locker) {
-		defer wg.Done()
-		l.Lock()
-		defer l.Unlock()
-	}
-	test := func(count int, mutex, rwMutex sync.Locker) time.Duration {
-		var wg sync.WaitGroup
-		wg.Add(count + 1)
-		beginTestTime := time.Now()
-		go producer(&wg, mutex)
-		for i := count; i > 0; i-- {
-			go observer(&wg, rwMutex)
-		}
-		wg.Wait()
-		return time.Since(beginTestTime)
-	}
-	tw := tabwriter.NewWriter(os.Stdout, 0, 1, 2, ' ', 0)
-	defer tw.Flush()
-	var m sync.RWMutex
-	fmt.Fprintf(tw, "Readers\tRWMutext\tMutex\n")
-	for i := 0; i < 25; i++ {
-		count := int(math.Pow(2, float64(i)))
-		fmt.Fprintf(
-			tw,
-			"%d\t%v\t%v\n",
-			count,
-			test(count, &m, m.RLocker()), test(count, &m, &m),
-		)
-	}
+	findIntersectionOf2SortedArrays()
+}
+
+func findIntersectionOf2SortedArrays() {
+	arr1 := []int{2, 3, 3, 5, 5, 6, 7, 7, 8, 12}
+	arr2 := []int{5, 5, 6, 8, 8, 9, 10, 10}
+	arr := findIntersection(arr1, arr2)
+	fmt.Printf("Array1:%v\nArray2:%v\nResult:%v\n", arr1, arr2, arr)
+	fmt.Println()
+	arr1 = []int{2, 3, 3, 5, 7, 11}
+	arr2 = []int{3, 3, 7, 15, 31}
+	arr = findIntersection(arr1, arr2)
+	fmt.Printf("Array1:%v\nArray2:%v\nResult:%v\n", arr1, arr2, arr)
 }
