@@ -6,14 +6,21 @@ func main() {
 	// checkBSTProperty()
 	// findFirstKeyGreaterThanAValueInBST()
 	// findFirstKLargestElementsInBST()
-	computeLCAInBST()
+	// computeLCAInBST()
+reconstructBST()
+}
 
+func reconstructBST(){
+	preorder:=[]int{43,23,37,29,31,41,47,53}
+	bst:=reconstructBSTFromTraversalData(preorder...)
+	fmt.Println(bst)
 }
-func computeLCAInBST(){
-	bt1,bt2:=get2BSTNodes()
-	bt3:=computeLCA(bt1,bt2)
-	fmt.Printf("LCA is: %d-%s\n",bt3.data,bt3.str)
-}
+
+// func computeLCAInBST(){
+// 	bt1,bt2:=get2BSTNodes()
+// 	bt3:=computeLCA(bt1,bt2)
+// 	fmt.Printf("LCA is: %d-%s\n",bt3.data,bt3.str)
+// }
 
 // func findFirstKLargestElementsInBST(){
 // 	inp := 3
