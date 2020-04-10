@@ -5,16 +5,22 @@ import "fmt"
 func main() {
 	// checkBSTProperty()
 	// findFirstKeyGreaterThanAValueInBST()
-	findFirstKLargestElementsInBST()
+	// findFirstKLargestElementsInBST()
+	computeLCAInBST()
 
 }
-
-func findFirstKLargestElementsInBST(){
-	inp := 3
-	result:=[]int{}
-	findKLargestelementsIn(bsTree(), inp,&result)
-	fmt.Println(inp, "largest :", result)
+func computeLCAInBST(){
+	bt1,bt2:=btGetTwoNodes()
+	bt3:=computeLCA(bt1,bt2)
+	fmt.Printf("LCA is: %d %s\n",bt3.data,bt3.str)
 }
+
+// func findFirstKLargestElementsInBST(){
+// 	inp := 3
+// 	result:=[]int{}
+// 	findKLargestElementsIn(bsTree(), inp,&result)
+// 	fmt.Println(inp, "largest :", result)
+// }
 
 // func findFirstKeyGreaterThanAValueInBST() {
 // 	inp := 23
