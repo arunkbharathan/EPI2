@@ -4,14 +4,21 @@ import "fmt"
 
 func main() {
 	// checkBSTProperty()
-	findFirstKeyGreaterThanAValueInBST()
+	// findFirstKeyGreaterThanAValueInBST()
+
 }
 
-func findFirstKeyGreaterThanAValueInBST() {
-	inp := 23
-	val := findFirstKeyGreaterThan(bsTree(), inp)
-	fmt.Println(inp, ":", val)
+func findFirstKLargestElementsInBST(){
+	inp := 5
+	val := findFirstKLargestElementsInBST(bsTree(), inp)
+	fmt.Println(inp, "largest :", val)
 }
+
+// func findFirstKeyGreaterThanAValueInBST() {
+// 	inp := 23
+// 	val := findFirstKeyGreaterThan(bsTree(), inp)
+// 	fmt.Println(inp, ":", val)
+// }
 
 // func checkBSTProperty(){
 // 	satisfies:=checkBTSatisfiesBSTProperty1(bsTree())
