@@ -3,5 +3,6 @@ package main
 func main() {
 	// confinedChannel()
 	// orChannel()
-	goRooutineErrors()
+	// goRooutineErrors()
+	pipelines()
 }
