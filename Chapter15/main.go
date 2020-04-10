@@ -10,7 +10,7 @@ func main() {
 }
 
 func findFirstKLargestElementsInBST(){
-	inp := 5
+	inp := 3
 	result:=[]int{}
 	findKLargestelementsIn(bsTree(), inp,&result)
 	fmt.Println(inp, "largest :", result)
