@@ -5,13 +5,15 @@ import "fmt"
 func main() {
 	// checkBSTProperty()
 	// findFirstKeyGreaterThanAValueInBST()
+	findFirstKLargestElementsInBST()
 
 }
 
 func findFirstKLargestElementsInBST(){
 	inp := 5
-	val := findFirstKLargestElementsInBST(bsTree(), inp)
-	fmt.Println(inp, "largest :", val)
+	result:=[]int{}
+	findKLargestelementsIn(bsTree(), inp,&result)
+	fmt.Println(inp, "largest :", result)
 }
 
 // func findFirstKeyGreaterThanAValueInBST() {
