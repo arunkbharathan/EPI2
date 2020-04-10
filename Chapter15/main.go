@@ -10,9 +10,9 @@ func main() {
 
 }
 func computeLCAInBST(){
-	bt1,bt2:=btGetTwoNodes()
+	bt1,bt2:=get2BSTNodes()
 	bt3:=computeLCA(bt1,bt2)
-	fmt.Printf("LCA is: %d %s\n",bt3.data,bt3.str)
+	fmt.Printf("LCA is: %d-%s\n",bt3.data,bt3.str)
 }
 
 // func findFirstKLargestElementsInBST(){

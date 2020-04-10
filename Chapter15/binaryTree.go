@@ -313,3 +313,67 @@ func btGetTwoNodes() (*binaryTree, *binaryTree) {
 	btm.parent = btl
 	return btm, btb
 }
+
+func get2BSTNodes() (*binaryTree, *binaryTree) {
+	var (
+		bta *binaryTree = &binaryTree{19, "A", nil, nil, nil}
+
+		btb *binaryTree = &binaryTree{7, "B", nil, nil, nil}
+		bti *binaryTree = &binaryTree{43, "I", nil, nil, nil}
+
+		btc *binaryTree = &binaryTree{3, "C", nil, nil, nil}
+		btf *binaryTree = &binaryTree{11, "F", nil, nil, nil}
+		btj *binaryTree = &binaryTree{23, "J", nil, nil, nil}
+		bto *binaryTree = &binaryTree{47, "O", nil, nil, nil}
+
+		btd *binaryTree = &binaryTree{2, "D", nil, nil, nil}
+		bte *binaryTree = &binaryTree{5, "E", nil, nil, nil}
+		btg *binaryTree = &binaryTree{17, "G", nil, nil, nil}
+		btk *binaryTree = &binaryTree{37, "K", nil, nil, nil}
+		btp *binaryTree = &binaryTree{53, "P", nil, nil, nil}
+
+		bth *binaryTree = &binaryTree{13, "H", nil, nil, nil}
+		btl *binaryTree = &binaryTree{29, "L", nil, nil, nil}
+		btn *binaryTree = &binaryTree{41, "N", nil, nil, nil}
+
+		btm *binaryTree = &binaryTree{31, "M", nil, nil, nil}
+	)
+	bta.parent = nil
+
+	bta.left = btb
+	btb.parent = bta
+	bta.right = bti
+	bti.parent = bta
+
+	btb.left = btc
+	btc.parent = btb
+	btb.right = btf
+	btf.parent = btb
+	bti.left = btj
+	btj.parent = bti
+	bti.right = bto
+	bto.parent = bti
+
+	btc.left = btd
+	btd.parent = btc
+	btc.right = bte
+	bte.parent = btc
+	btf.right = btg
+	btg.parent = btf
+	btj.right = btk
+	btk.parent = btj
+	bto.right = btp
+	btp.parent = bto
+
+	btg.left = bth
+	bth.parent = btg
+
+	btk.left = btl
+	btl.parent = btk
+	btk.right = btn
+	btn.parent = btk
+
+	btl.right = btm
+	btm.parent = btl
+	return btc, btg
+}
