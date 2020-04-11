@@ -10,15 +10,6 @@ import (
 	avl "github.com/emirpasic/gods/trees/avltree"
 )
 
-type mostVisitedWithCount struct {
-	page  string
-	count int
-}
-
-func (item *mostVisitedWithCount) String() string {
-	return fmt.Sprintf("Site: %s ; Count: %d\n", item.page, item.count)
-}
-
 func mostVisitedPage(kMostVisited int) {
 	// mostVisited := []*mostVisitedWithCount{}
 	visitCountIDTree := avl.NewWithIntComparator()
