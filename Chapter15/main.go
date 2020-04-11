@@ -1,5 +1,6 @@
 package main
 
+import "fmt"
 
 func main() {
 	// checkBSTProperty()
@@ -7,13 +8,20 @@ func main() {
 	// findFirstKLargestElementsInBST()
 	// computeLCAInBST()
 	// reconstructBST()
-	findMostVisitedPage()
+	// findMostVisitedPage()
+	buildMinimumHeightBSTFromSortedArray()
 }
 
-func findMostVisitedPage() {
-	kMostVisited := 5
-	mostVisitedPage(kMostVisited)
+func buildMinimumHeightBSTFromSortedArray() {
+	arr := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	result := buildMinimumHeightBST(arr)
+	fmt.Println(result)
 }
+
+// func findMostVisitedPage() {
+// 	kMostVisited := 5
+// 	mostVisitedPage(kMostVisited)
+// }
 
 // func reconstructBST(){
 // 	preorder:=[]int{43,23,37,29,31,41,47,53}
