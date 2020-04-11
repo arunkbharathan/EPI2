@@ -1,20 +1,25 @@
 package main
 
-import "fmt"
 
 func main() {
 	// checkBSTProperty()
 	// findFirstKeyGreaterThanAValueInBST()
 	// findFirstKLargestElementsInBST()
 	// computeLCAInBST()
-reconstructBST()
+	// reconstructBST()
+	findMostVisitedPage()
 }
 
-func reconstructBST(){
-	preorder:=[]int{43,23,37,29,31,41,47,53}
-	bst:=reconstructBSTFromTraversalData(preorder...)
-	fmt.Println(bst)
+func findMostVisitedPage() {
+	kMostVisited := 5
+	mostVisitedPage(kMostVisited)
 }
+
+// func reconstructBST(){
+// 	preorder:=[]int{43,23,37,29,31,41,47,53}
+// 	bst:=reconstructBSTFromTraversalData(preorder...)
+// 	fmt.Println(bst)
+// }
 
 // func computeLCAInBST(){
 // 	bt1,bt2:=get2BSTNodes()

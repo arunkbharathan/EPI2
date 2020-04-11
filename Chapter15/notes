@@ -1,0 +1,1 @@
+b=a.toLowerCase().split('').filter(x=>(x!='.'&&x!=','&&x!='(')&&x!=')'&&x!=';'&&x!='-'&x!=' '&&x!='"').join(' ').match(/.{1,90}/g).map(x=>x.trim()).join('\n')
