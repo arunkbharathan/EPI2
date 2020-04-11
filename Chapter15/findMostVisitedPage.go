@@ -28,25 +28,65 @@ func mostVisitedPage(kMostVisited int) {
 		log.Fatalf("Can't open file %s", err)
 	}
 	lineReader := bufio.NewScanner(fs)
-	// here solution is to use a hash map and bst to for quick pointing to bst for update and find max and min
-	// But the bst I found is not allowing duplicate keys so doing a workaround
+
 	for lineReader.Scan() {
 		line := lineReader.Text()
 		for _, chr := range strings.Split(line, " ") {
-			idVisitCountMap[chr]++
-		}
+			if oldCount, ok := idVisitCountMap[chr]; ok {
+				if idval, exists := visitCountIDTree.Get(oldCount); exists {
+					visitCountIDTree.Remove(oldCount)
+					ids := idval.([]string)
+					newIds := []string{}
+					for _, k := range ids {
+						if k != chr {
+							newIds = append(newIds, k)
+						}
+					}
+					if len(newIds) != 0 {
+						visitCountIDTree.Put(oldCount, newIds)
+						// fmt.Println()
+					}
+					idVisitCountMap[chr]++
+					newCount := idVisitCountMap[chr]
+					if idval, exists := visitCountIDTree.Get(newCount); exists {
+						visitCountIDTree.Remove(newCount)
+						ids := idval.([]string)
+						newIds := append(ids, chr)
+						if len(newIds) != 0 {
+							visitCountIDTree.Put(newCount, newIds)
+							// fmt.Println()
+						}
+					} else {
+						visitCountIDTree.Put(newCount, []string{chr})
+					}
 
-		for id, count := range idVisitCountMap {
-			visitCountIDTree.Put(count, id)
-		}
-		for i := kMostVisited; i > 0; i-- {
-			item := visitCountIDTree.Right()
-			if item != nil {
-				val := mostVisitedWithCount{item.Value.(string), item.Key.(int)}
-				fmt.Print(&val)
-				visitCountIDTree.Remove(item.Key)
+				}
+			} else {
+
+				if idval, exists := visitCountIDTree.Get(1); exists {
+					visitCountIDTree.Remove(1)
+					ids := idval.([]string)
+					newIds := append(ids, chr)
+					if len(newIds) != 0 {
+						visitCountIDTree.Put(1, newIds)
+						// fmt.Println()
+					}
+				} else {
+					visitCountIDTree.Put(1, []string{chr})
+				}
+				idVisitCountMap[chr]++
 			}
 		}
-		fmt.Println()
+
 	}
+
+	for i := kMostVisited; i > 0; i-- {
+		item := visitCountIDTree.Right()
+		if item != nil {
+
+			fmt.Println(item.Value.([]string), " : ", item.Key.(int))
+			visitCountIDTree.Remove(item.Key)
+		}
+	}
+	fmt.Println()
 }
