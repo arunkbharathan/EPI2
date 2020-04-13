@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://www.geeksforgeeks.org/recursive-program-to-generate-power-set/
 func powerSet(arr []int) {
 	currSet := []int{}
 	generatePowerSet(arr, 0, currSet)
