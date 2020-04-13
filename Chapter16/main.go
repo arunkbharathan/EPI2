@@ -1,15 +1,25 @@
 package main
 
-import "math"
+import "fmt"
 
 func main() {
 	// towerOfHanoi()
-	nQueens()
+	// nQueens()
+	printPermutations()
 }
-func nQueens() {
-	size := 2.0
-	solveNQueens(int(math.Exp2(size)))
+
+func printPermutations() {
+	arr := []int{2, 3, 5, 7}
+	result := generatePermutations(arr)
+	for _, val := range result {
+		fmt.Println(val)
+	}
 }
+
+// func nQueens() {
+// 	size := 2.0
+// 	solveNQueens(int(math.Exp2(size)))
+// }
 
 // func towerOfHanoi() {
 // 	disks := 3
