@@ -5,14 +5,27 @@ import "fmt"
 func main() {
 	// countNumberOfScoreCombinations()
 	// editDistance()
-	traverse2DArray()
+	// traverse2DArray()
+	searchForASequenceIn2DArray()
 }
 
-func traverse2DArray() {
-	arraySize := 5
-	ways := computeWaysToTraverseA2DArray(arraySize)
-	fmt.Println(ways, "ways are there.")
+func searchForASequenceIn2DArray() {
+	seq := []int{1, 3, 4, 6}
+	grid := [][]int{
+		{1, 2, 3},
+		{3, 4, 5},
+		{5, 6, 7},
+	}
+
+	fmt.Printf("%v occurs in %v :%t\n", seq, grid, search2DArray(seq, grid))
+
 }
+
+// func traverse2DArray() {
+// 	arraySize := 5
+// 	ways := computeWaysToTraverseA2DArray(arraySize)
+// 	fmt.Println(ways, "ways are there.")
+// }
 
 // func editDistance() {
 // 	str1 := "Carthorse"
