@@ -8,8 +8,8 @@ func main() {
 }
 
 func editDistance() {
-	str1 := "APRIL"
-	str2 := "MARCH"
+	str1 := "Carthorse"
+	str2 := "Orchestra"
 	dist := computeTheLevenshteinDistance(str1, str2)
 	fmt.Printf("Levenshtein distance between \"%s\" and \"%s\" is %d\n", str1, str2, dist)
 }
