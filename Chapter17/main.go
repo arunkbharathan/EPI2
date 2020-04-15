@@ -19,19 +19,19 @@ func checkNameIsAConcatenationOfDictioneryWords() {
 	// 	"and":    0,
 	// 	"beyond": 0,
 	// }
-	url := "iamace"
+	url := "amanaplanacanalpanama"
 	dictionary := map[string]int{
-		"i":   0,
-		"a":   0,
-		"am":  0,
-		"ace": 0,
+		"i":      0,
+		"a":      0,
+		"am":     0,
+		"an":     0,
+		"man":    0,
+		"plan":   0,
+		"canal":  0,
+		"panama": 0,
 	}
 	val := isWordInDictionary(url, dictionary)
-	if val {
-		fmt.Printf("Word %s is in dictionary %v\n", url, dictionary)
-	} else {
-		fmt.Printf("Word %s is not in dictionary %v", url, dictionary)
-	}
+	fmt.Println("Decomposition:", val)
 }
 
 // func solveKnapSackProblem() {

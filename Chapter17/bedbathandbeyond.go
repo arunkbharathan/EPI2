@@ -1,61 +1,45 @@
 package main
 
-func isWordInDictionary(word string, dictionery map[string]int) bool {
-	result := make([][]int, len(word))
-	// splitPoint := make([][]int, len(word)*len(word))
+func isWordInDictionary(word string, dictionery map[string]int) []string {
+	lastLength := make([]int, len(word))
 
-	for i := range result {
-		result[i] = make([]int, len(word))
-		for j := range result[i] {
-			if i == j {
-				letter := string(word[i])
-				if _, ok := dictionery[letter]; ok {
-					result[i][j] = 1
-				} else {
-					result[i][j] = 0
-				}
-			} else {
-				result[i][j] = -1
-			}
-			result[i][j] = -1
+	for i := range lastLength {
+		lastLength[i] = -1
+	}
+	for i := 0; i < len(word); i++ {
+		str := word[0 : i+1]
+		if _, ok := dictionery[str]; ok {
+			lastLength[i] = i + 1
 		}
-	}
 
-	checkForWordInDictionary(&result, word, 0, len(word), &dictionery)
-	return false
-}
-
-func checkForWordInDictionary(result *[][]int, word string, n, k int, dictionery *map[string]int) int {
-	array := *result
-	dict := *dictionery
-	// if n > k {
-	// 	return 0
-	// }
-	if len(word) == 0 {
-		return 1
-	}
-	if _, ok := dict[word]; ok {
-		array[n][k] = 1
-		return 1
-	}
-
-	if array[n][k] == -1 {
-
-		for i := 0; i < k; i++ {
+		if lastLength[i] == -1 {
 			for j := 0; j < i; j++ {
-				word1, word2 := word[0:i], word[i:k+1]
-				_, _ = word1, word2
-				val1 := checkForWordInDictionary(result, word, 0, i, dictionery)
-				val2 := checkForWordInDictionary(result, word, i, k+1, dictionery)
-				if val1 == 1 && val2 == 1 {
-					array[n][k] = 1
-				} else {
-					array[n][k] = 0
+				if lastLength[j] != -1 {
+					str := word[j+1 : i+1]
+					if _, ok := dictionery[str]; ok {
+						lastLength[i] = i - j
+						break
+					}
 				}
 			}
 		}
-
 	}
-	return array[n][k]
 
+	decompositions := []string{}
+
+	if lastLength[len(lastLength)-1] != -1 {
+		idx := len(word) - 1
+
+		for idx >= 0 {
+			str := word[idx+1-lastLength[idx] : idx+1]
+			decompositions = append(decompositions, str)
+			idx -= lastLength[idx]
+		}
+		for i := 0; i < len(decompositions)/2; i++ {
+			j := len(decompositions) - 1 - i
+			decompositions[i], decompositions[j] = decompositions[j], decompositions[i]
+		}
+	}
+
+	return decompositions
 }
