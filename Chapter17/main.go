@@ -11,9 +11,9 @@ func main() {
 }
 
 func solveKnapSackProblem() {
-	W := []int{5, 3, 2, 4}
-	P := []int{60, 50, 30, 70}
-	weightConstraint := 5
+	W := []int{20, 8, 60, 55, 40, 70, 85, 25, 30, 65, 75, 10, 95, 50, 40, 10}
+	P := []int{65, 35, 245, 195, 65, 150, 275, 155, 120, 320, 75, 40, 200, 100, 220, 99}
+	weightConstraint := 130
 	maxVal, items := knapSackMaximumValue(W, P, weightConstraint)
 	fmt.Printf("Maximum profit for the given knapsack weight is %d\nFor profits: %v and weights: %v and items are %v + 1\n", maxVal, P, W, items)
 }
