@@ -7,16 +7,40 @@ func main() {
 	// editDistance()
 	// traverse2DArray()
 	// searchForASequenceIn2DArray()
-	solveKnapSackProblem()
+	// solveKnapSackProblem()
+	checkNameIsAConcatenationOfDictioneryWords()
 }
 
-func solveKnapSackProblem() {
-	W := []int{20, 8, 60, 55, 40, 70, 85, 25, 30, 65, 75, 10, 95, 50, 40, 10}
-	P := []int{65, 35, 245, 195, 65, 150, 275, 155, 120, 320, 75, 40, 200, 100, 220, 99}
-	weightConstraint := 130
-	maxVal, items := knapSackMaximumValue(W, P, weightConstraint)
-	fmt.Printf("Maximum profit for the given knapsack weight is %d\nFor profits: %v and weights: %v and items are %v + 1\n", maxVal, P, W, items)
+func checkNameIsAConcatenationOfDictioneryWords() {
+	// url := "bedbathandbeyond"
+	// dictionary := map[string]int{
+	// 	"bed":    0,
+	// 	"bath":   0,
+	// 	"and":    0,
+	// 	"beyond": 0,
+	// }
+	url := "iamace"
+	dictionary := map[string]int{
+		"i":   0,
+		"a":   0,
+		"am":  0,
+		"ace": 0,
+	}
+	val := isWordInDictionary(url, dictionary)
+	if val {
+		fmt.Printf("Word %s is in dictionary %v\n", url, dictionary)
+	} else {
+		fmt.Printf("Word %s is not in dictionary %v", url, dictionary)
+	}
 }
+
+// func solveKnapSackProblem() {
+// 	W := []int{20, 8, 60, 55, 40, 70, 85, 25, 30, 65, 75, 10, 95, 50, 40, 10}
+// 	P := []int{65, 35, 245, 195, 65, 150, 275, 155, 120, 320, 75, 40, 200, 100, 220, 99}
+// 	weightConstraint := 130
+// 	maxVal, items := knapSackMaximumValue(W, P, weightConstraint)
+// 	fmt.Printf("Maximum profit for the given knapsack weight is %d\nFor profits: %v and weights: %v and items are %v + 1\n", maxVal, P, W, items)
+// }
 
 // func searchForASequenceIn2DArray() {
 // 	seq := []int{1, 3, 4, 6}
