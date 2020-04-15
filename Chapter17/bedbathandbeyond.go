@@ -1,5 +1,6 @@
 package main
 
+// https://www.youtube.com/watch?v=WepWFGxiwRs&t=21s
 func isWordInDictionary(word string, dictionery map[string]int) []string {
 	lastLength := make([]int, len(word))
 
