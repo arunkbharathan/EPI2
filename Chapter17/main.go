@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// countNumberOfScoreCombinations()
 	// editDistance()
@@ -9,7 +11,11 @@ func main() {
 }
 
 func solveKnapSackProblem() {
-
+	W := []int{5, 3, 2, 4}
+	P := []int{60, 50, 30, 70}
+	weightConstraint := 5
+	maxVal, items := knapSackMaximumValue(W, P, weightConstraint)
+	fmt.Printf("Maximum profit for the given knapsack weight is %d\nFor profits: %v and weights: %v and items are %v + 1\n", maxVal, P, W, items)
 }
 
 // func searchForASequenceIn2DArray() {
