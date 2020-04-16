@@ -6,15 +6,21 @@ func main() {
 	// threeSumProblem()
 	// majorityProblem()
 	// gasUpProblem()
-	maximumWaterTapped()
-
+	// maximumWaterTapped()
+	largestRectangleUnderSkyline()
 }
 
-func maximumWaterTapped() {
-	wall := []int{1, 2, 1, 3, 4, 4, 5, 6, 2, 1, 3, 1, 3, 2, 1, 2, 4, 1}
-	area, l, r := maxWaterTappedBwVerticalLines(wall)
-	fmt.Printf("For wall %v \nmax area is between (%d,%d) and area is %d\n", wall, l, r, area)
+func largestRectangleUnderSkyline() {
+	buildingHeight := []int{1, 4, 2, 5, 6, 3, 2, 6, 6, 5, 2, 1, 3, 0}
+	a, l, r := computeLargestRectangleUnderSkyline(buildingHeight)
+	fmt.Printf("Maximum rectangular area in building heights %v\nis %d between (%d,%d)\n", buildingHeight, a, l, r)
 }
+
+// func maximumWaterTapped() {
+// 	wall := []int{1, 2, 1, 3, 4, 4, 5, 6, 2, 1, 3, 1, 3, 2, 1, 2, 4, 1}
+// 	area, l, r := maxWaterTappedBwVerticalLines(wall)
+// 	fmt.Printf("For wall %v \nmax area is between (%d,%d) and area is %d\n", wall, l, r, area)
+// }
 
 // func gasUpProblem() {
 // 	mpg := 20.0
