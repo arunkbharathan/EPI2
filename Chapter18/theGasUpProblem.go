@@ -36,8 +36,8 @@ func solveGasUpProblem(mpg float64, cityPump, cityDistance []float64) int {
 	}
 
 	p.Title.Text = "Remaining Gallons"
-	p.X.Label.Text = "Gallons"
-	p.Y.Label.Text = "City"
+	p.X.Label.Text = "City"
+	p.Y.Label.Text = "Gallons"
 
 	err = plotutil.AddLinePoints(p,
 		"Remaining Gallons", dataPoints(travelData))
