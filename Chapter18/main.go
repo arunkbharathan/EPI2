@@ -5,16 +5,24 @@ import "fmt"
 func main() {
 	// threeSumProblem()
 	// majorityProblem()
-	gasUpProblem()
+	// gasUpProblem()
+	maximumWaterTapped()
+
 }
 
-func gasUpProblem() {
-	mpg := 20.0
-	cityPump := []float64{50, 20, 5, 30, 25, 10, 10}
-	cityDistance := []float64{900, 600, 200, 400, 600, 200, 100}
-	city := solveGasUpProblem(mpg, cityPump, cityDistance)
-	fmt.Printf("The ample city to start journey is from %d\n", city)
+func maximumWaterTapped() {
+	wall := []int{1, 2, 1, 3, 4, 4, 5, 6, 2, 1, 3, 1, 3, 2, 1, 2, 4, 1}
+	area, l, r := maxWaterTappedBwVerticalLines(wall)
+	fmt.Printf("For wall %v \nmax area is between (%d,%d) and area is %d\n", wall, l, r, area)
 }
+
+// func gasUpProblem() {
+// 	mpg := 20.0
+// 	cityPump := []float64{50, 20, 5, 30, 25, 10, 10}
+// 	cityDistance := []float64{900, 600, 200, 400, 600, 200, 100}
+// 	city := solveGasUpProblem(mpg, cityPump, cityDistance)
+// 	fmt.Printf("The ample city to start journey is from %d\n", city)
+// }
 
 // func majorityProblem() {
 // 	str := "bacaacaadaaaccbcdccdcaccacccckckkcccc"
