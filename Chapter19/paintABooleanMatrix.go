@@ -22,7 +22,7 @@ func paintBooleanMatrix(boolMatrix [][]uint, paint [2]int) [][2]int {
 
 		for _, dirVector := range news {
 			next := [2]int{nodePoint[0] + dirVector[0], nodePoint[1] + dirVector[1]}
-			if next[0] < 0 || next[0] >= len(boolMatrix) || next[1] < 0 || next[0] >= len(boolMatrix[0]) || boolMatrix[next[0]][next[1]] == colorToPaint {
+			if next[0] < 0 || next[0] >= len(boolMatrix) || next[1] < 0 || next[1] >= len(boolMatrix[0]) || boolMatrix[next[0]][next[1]] == colorToPaint {
 				continue
 			}
 			quu = append(quu, next)
