@@ -1,47 +1,59 @@
 package main
 
-import "fmt"
-
 func main() {
 	// searchMaze()
 	// paintABooleanMatrix()
-	findEnclosedRegion()
+	// findEnclosedRegion()
+	transformString()
+}
+func transformString() {
+	dict := map[string]struct{}{
+		"dot": {},
+		"cat": {},
+		"bat": {},
+		"dog": {},
+		"cot": {},
+		"dag": {},
+	}
+	str1 := "cat"
+	str2 := "dog"
+	transformOneStringToAnother(dict, str1, str2)
 }
 
-func findEnclosedRegion() {
-	region := [][]int{
-		{1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
-		{0, 0, 1, 0, 0, 1, 0, 0, 1, 1},
-		{1, 1, 1, 0, 0, 1, 1, 0, 1, 1},
-		{0, 1, 0, 1, 1, 1, 1, 0, 1, 0},
-		{1, 0, 1, 0, 0, 0, 0, 1, 0, 0},
-		{1, 0, 1, 0, 0, 1, 0, 1, 1, 1},
-		{1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
-		{1, 0, 1, 0, 1, 1, 1, 0, 0, 0},
-		{1, 0, 1, 1, 0, 0, 0, 1, 1, 1},
-		{0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
-	}
-	fmt.Printf("Region\n\n")
-	for _, row := range region {
-		for _, val := range row {
-			fmt.Print(" ", val, " ")
-		}
-		fmt.Println()
-	}
-	of := 0
-	enclosingPoints := computeEnclosedRegions(region, of)
+// func findEnclosedRegion() {
+// 	region := [][]int{
+// 		{1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
+// 		{0, 0, 1, 0, 0, 1, 0, 0, 1, 1},
+// 		{1, 1, 1, 0, 0, 1, 1, 0, 1, 1},
+// 		{0, 1, 0, 1, 1, 1, 1, 0, 1, 0},
+// 		{1, 0, 1, 0, 0, 0, 0, 1, 0, 0},
+// 		{1, 0, 1, 0, 0, 1, 0, 1, 1, 1},
+// 		{1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
+// 		{1, 0, 1, 0, 1, 1, 1, 0, 0, 0},
+// 		{1, 0, 1, 1, 0, 0, 0, 1, 1, 1},
+// 		{0, 1, 0, 0, 0, 0, 0, 1, 1, 0},
+// 	}
+// 	fmt.Printf("Region\n\n")
+// 	for _, row := range region {
+// 		for _, val := range row {
+// 			fmt.Print(" ", val, " ")
+// 		}
+// 		fmt.Println()
+// 	}
+// 	of := 0
+// 	enclosingPoints := computeEnclosedRegions(region, of)
 
-	fmt.Printf("\n\nResult\n\n")
-	for _, xy := range enclosingPoints {
-		region[xy[0]][xy[1]] = 8
-	}
-	for _, row := range region {
-		for _, val := range row {
-			fmt.Print(" ", val, " ")
-		}
-		fmt.Println()
-	}
-}
+// 	fmt.Printf("\n\nResult\n\n")
+// 	for _, xy := range enclosingPoints {
+// 		region[xy[0]][xy[1]] = 8
+// 	}
+// 	for _, row := range region {
+// 		for _, val := range row {
+// 			fmt.Print(" ", val, " ")
+// 		}
+// 		fmt.Println()
+// 	}
+// }
 
 // func paintABooleanMatrix() {
 
