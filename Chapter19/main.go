@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// searchMaze()
 	// paintABooleanMatrix()
@@ -17,7 +19,8 @@ func transformString() {
 	}
 	str1 := "cat"
 	str2 := "dog"
-	transformOneStringToAnother(dict, str1, str2)
+	length := transformOneStringToAnother(dict, str1, str2)
+	fmt.Printf("Length of shortest production sequence of words %s and %s is %d using given dictionary\n", str1, str2, length)
 }
 
 // func findEnclosedRegion() {
