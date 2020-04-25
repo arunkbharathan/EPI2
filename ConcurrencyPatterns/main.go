@@ -4,5 +4,10 @@ func main() {
 	// confinedChannel()
 	// orChannel()
 	// goRooutineErrors()
-	pipelines()
+	// pipelines()
+	// handyGenerators()
+	// fanInfanOut()
+	// teeNORDone()
+	// bridgeChannel()
+	bufferedChannel()
 }
