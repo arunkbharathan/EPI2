@@ -9,5 +9,11 @@ func main() {
 	// fanInfanOut()
 	// teeNORDone()
 	// bridgeChannel()
-	bufferedChannel()
+	// bufferedChannel()
+	// heartBeats()
+	// heartBeats2()
+	// replicatedRequests()
+	// ratelimiting()
+	// healingUnhealthyGoRoutinesSimple()
+	healingUnhealthyGoRoutinesComplex()
 }
