@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	// stackWithMax()
-	// solveReversePolishNotation()
+	solveReversePolishNotation()
 	// checkWellFormedness()
 	// printBinaryTree()
 	// circularQImplementation()
@@ -103,15 +103,15 @@ func queueBackedByStack() {
 
 // }
 
-// func solveReversePolishNotation() {
-// 	notation1 := "3,4,+,2,*,1,+"
-// 	fmt.Println(solveRPN(notation1))
-// 	notation2 := "1,1,+,-2,*,"
-// 	fmt.Println(solveRPN(notation2))
-// 	notation3 := "-641,6,/,28,/"
-// 	fmt.Println(solveRPN(notation3))
+func solveReversePolishNotation() {
+	notation1 := "3,4,+,2,*,1,+"
+	fmt.Println(solveRPN(notation1))
+	notation2 := "1,1,+,-2,*,"
+	fmt.Println(solveRPN(notation2))
+	notation3 := "-641,6,/,28,/"
+	fmt.Println(solveRPN(notation3))
 
-// }
+}
 
 // func stackWithMax() {
 
